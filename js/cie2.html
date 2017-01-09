@@ -9,15 +9,23 @@
 <body>
     <img id="image" src="image/eye_open.png" width="50" height="30" onclick="imageClick()">
 <script>
-            function imageClick() {
-                element = document.getElementById("image");
-                if (element.src.match("open")) {
-                    element.src = "image/eye_close.png";
-                } else {
-                    element.src = "image/eye_open.png";
-                }
-            }
-        </script>
+    function imageClick() {
+        element = document.getElementById("image");
+        if (element.src.match("open")) {
+            element.src = "image/eye_close.png";
+        } else {
+            element.src = "image/eye_open.png";
+        }
+    }
+</script>
+
+<script>
+    function changeTextColor(){
+        text = document.getElementById("textDemo");
+        text.style.color="#ff0000";
+    }
+</script>
+<p id="textDemo" onclick="changeTextColor()">点击改变字体颜色</p>
 </body>
 
 </html>
