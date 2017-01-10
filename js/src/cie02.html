@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>菜鸟学院</title>
-    </head>
-    <body>
-        <button type="button" onclick="myFunction()">帮助</button>
-        <h1  id="demo" >help</h1>
-        <script>
-            function myFunction(){
-                var str = {firstName:"Jone",lastName:"Doe",id:55};
-                let element = document.getElementById("demo");
-                str.firstName = "jjj";
-                element.innerHTML = str.firstName;
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟学院</title>
+</head>
+
+<body>
+    <button type="button" onclick="newFunction()">帮助</button>
+<h1 id="demo">help</h1>
+<script>
+    function myFunction() {
+        carName = 'carName';
+        var str = {
+            firstName: "Jone", lastName: "Doe", id: 55,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
             }
-        </script>
-    </body>
+        };
+        let element = document.getElementById("demo");
+        str.firstName = "jjj";
+        element.innerHTML = str.fullName();
+    }
+
+    function newFunction() {
+        myFunction();
+        alert(window.carName);
+    }
+</script>
+</body>
+
 </html>

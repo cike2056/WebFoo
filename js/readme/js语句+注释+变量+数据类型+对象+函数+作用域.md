@@ -1,7 +1,7 @@
 [js基本规则](http://www.runoob.com/js/js-statements.html)
 
 #### JavaScript 语句
-JavaScript 语句是发给浏览器的命令。
+    JavaScript 语句是发给浏览器的命令。
 
 1. 分号 
 分号用于分隔 JavaScript 语句。
@@ -32,7 +32,7 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
 您可以在文本字符串中使用反斜杠对代码行进行换行。
 
 #### JavaScript 注释
-JavaScript 注释可用于提高代码的可读性。
+    JavaScript 注释可用于提高代码的可读性。
 
 1. 单行注释以 // 开头。或者<!-- -->
 2. JavaScript 多行注释 多行注释以 /* 开始，以 */ 结尾。
@@ -40,7 +40,7 @@ JavaScript 注释可用于提高代码的可读性。
 4. 在行末使用注释
 
 #### JavaScript 变量
-JavaScript 语句和 JavaScript 变量都对大小写敏感。
+    JavaScript 语句和 JavaScript 变量都对大小写敏感。
 
 1. 变量必须以字母开头. 变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）. 变量名称对大小写敏感（y 和 Y 是不同的变量）
 2. JavaScript 数据类型
@@ -59,7 +59,7 @@ JavaScript 语句和 JavaScript 变量都对大小写敏感。
 7. JavaScript 算数
 
 #### JavaScript 数据类型
-字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。
+    字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。
 
 1. JavaScript 拥有动态类型
     JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型
@@ -108,4 +108,71 @@ JavaScript 语句和 JavaScript 变量都对大小写敏感。
     var person= new Object;
 
 #### JavaScript 对象
-    
+    在 JavaScript中，几乎所有的事物都是对象
+
+1. 对象属性
+    键值对通常写法为 name : value (键与值以冒号分割)。
+    我们通常认为 "JavaScript 对象是键值对的容器"。
+    person.name;
+    person['name'];
+
+2. 对象方法
+    对象的方法定义了一个函数，并<font color="red">作为对象的属性存储</font>。
+    对象方法通过添加 () 调用 (作为一个函数)。
+    ```
+    var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id : 5566,
+        fullName : function() 
+        {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    ```
+3. 访问对象方法
+    <font color="red">通常 fullName() 是作为 person 对象的一个方法， fullName 是作为一个属性。</font>
+    有多种方式可以创建，使用和修改 JavaScript 对象。
+    同样也有多种方式用来创建，使用和修改属性和方法。
+
+#### JavaScript 函数
+    函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。
+    JavaScript 对大小写敏感。关键词 function 必须是小写的，并且必须以与函数名称相同的大小写来调用函数。
+
+1. 调用带参数的函数
+    在调用函数时，您可以向其传递值，这些值被称为参数。这些参数可以在函数中使用。您可以发送任意多的参数，由逗号 (,) 分隔.
+2. 带有返回值的函数
+    通过使用 return 语句就可以实现。
+3. 局部 JavaScript 变量
+    在 JavaScript 函数内部声明的变量（使用 var）是局部变量，所以只能在函数内部访问它。（该变量的作用域是局部的）。
+    您可以在不同的函数中使用名称相同的局部变量，因为只有声明过该变量的函数才能识别出该变量。
+    只要函数运行完毕，本地变量就会被删除。
+4. 全局 JavaScript 变量
+    在函数外声明的变量是全局变量，网页上的所有脚本和函数都能访问它。
+5. JavaScript 变量的生存期
+    JavaScript 变量的生命期从它们被声明的时间开始。
+    局部变量会在函数运行以后被删除。
+    全局变量会在页面关闭后被删除。
+6. <font color="red">向未声明的 JavaScript 变量分配值</font>
+    如果您把值赋给尚未声明的变量，该变量将被自动作为全局变量声明。
+    carname="Volvo";
+    将声明一个全局变量 carname，即使它在函数内执行。
+
+#### JavaScript 作用域
+    在 JavaScript 中, 作用域为可访问变量，对象，函数的集合。
+1. JavaScript 局部作用域
+    变量在函数内声明，变量为局部作用域。
+    局部变量：只能在函数内部访问。
+2. JavaScript 全局变量
+    变量在函数外定义，即为全局变量。
+    全局变量有 全局作用域: 网页中所有脚本和函数均可使用。 
+    如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量（方法先被调用）。
+    实例中 carName 在函数内，但是为全局变量。
+
+3. JavaScript 变量生命周期
+    JavaScript 变量生命周期在它声明时初始化。
+    局部变量在函数执行完毕后销毁。
+    全局变量在页面关闭后销毁。
+
+4. 函数参数只在函数内起作用，是局部变量。
+
