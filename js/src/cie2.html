@@ -7,14 +7,14 @@
 </head>
 
 <body>
-    <img id="image" src="image/eye_open.png" width="50" height="30" onclick="imageClick()">
+    <img id="image" src="../image/eye_open.png" width="50" height="30" onclick="imageClick()">
 <script>
     function imageClick() {
-        element = document.getElementById("image");
+        let element = document.getElementById("image");
         if (element.src.match("open")) {
-            element.src = "image/eye_close.png";
+            element.src = "../image/eye_close.png";
         } else {
-            element.src = "image/eye_open.png";
+            element.src = "../image/eye_open.png";
         }
     }
 </script>
