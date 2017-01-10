@@ -1,4 +1,4 @@
-[js基本规则](http://www.runoob.com/js/js-statements.html)
+[js语句+注释+变量+数据类型+对象+函数+作用域](http://www.runoob.com/js/js-statements.html)
 
 #### JavaScript 语句
     JavaScript 语句是发给浏览器的命令。
