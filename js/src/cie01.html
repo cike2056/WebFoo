@@ -1,0 +1,25 @@
+<!DOCTYPE　html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>菜鸟学院</title>
+    </head>
+    <body>
+        <h1 id="demo">this is a title !</h1>
+        <p id="refjs">this is a paragraph !</p>
+        <img id="image" src="../image/eye_open.png" height="30" width="50" onclick="swift()">
+    </body>
+    <!--改变文字-->
+    <script>
+        function changeChar(){
+            let element = document.getElementById("demo");
+            element.innerHTML = "这是个标题";
+        }
+    </script>
+    <button type="button" onclick="changeChar()">translate</button>
+    <!--调用js-->
+    <script src="../res/inferJs.js"></script>
+    <button type="button" onclick="refjsmethod()">调用js</button>
+    <!--调用js替换图片-->
+    <script src="../res/swiftJs.js"></script>
+</html>
