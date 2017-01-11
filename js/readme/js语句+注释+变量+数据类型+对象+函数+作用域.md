@@ -22,31 +22,31 @@ JavaScript 语句通常以一个 语句标识符 为开始，并执行该语句�
 语句标识符是保留关键字不能作为变量名使用。
 
 5. JavaScript 对大小写敏感。
-JavaScript 对大小写是敏感的。
+JavaScript 对<font color="red">大小写</font>是敏感的。
 当编写 JavaScript 语句时，请留意是否关闭大小写切换键。
 
 6. 空格
 JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高其可读性。
 
 7. 对代码行进行折行
-您可以在文本字符串中使用反斜杠对代码行进行换行。
+您可以在文本字符串中使用<font color="red">反斜杠</font>对代码行进行换行。
 
 #### JavaScript 注释
     JavaScript 注释可用于提高代码的可读性。
 
-1. 单行注释以 // 开头。或者<!-- -->
-2. JavaScript 多行注释 多行注释以 /* 开始，以 */ 结尾。
+1. <font color="red">单行注释</font>以 // 开头。或者<!-- -->
+2. JavaScript <font color="red">多行注释</font> 多行注释以 /* 开始，以 */ 结尾。
 3. 使用注释来阻止执行
 4. 在行末使用注释
 
 #### JavaScript 变量
     JavaScript 语句和 JavaScript 变量都对大小写敏感。
 
-1. 变量必须以字母开头. 变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）. 变量名称对大小写敏感（y 和 Y 是不同的变量）
+1. 变量必须<font color='red'>以字母开头. 变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）. 变量名称对大小写敏感（y 和 Y 是不同的变量）</font>
 2. JavaScript 数据类型
 3. 声明（创建） JavaScript 变量
 4. 一条语句，多个变量
-    您可以在一条语句中声明很多变量。该语句以 var 开头，并使用逗号分隔变量即可：
+    您可以<font color='red'>在一条语句中声明很多变量。该语句以 var 开头，并使用逗号分隔变量即可</font>：
     var lastname="Doe", age=30, job="carpenter";
     声明也可横跨多行：
     var lastname="Doe",
@@ -59,12 +59,13 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
 7. JavaScript 算数
 
 #### JavaScript 数据类型
-    字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。
+
+<font color='red'>字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。</font>
 
 1. JavaScript 拥有动态类型
-    JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型
+    <font color='red'>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型</font>
 2. JavaScript 字符串
-    字符串可以是引号中的任意文本。您可以使用单引号或双引号
+    <font color='red'>字符串可以是引号中的任意文本。您可以使用单引号或双引号</font>
     您可以在字符串中使用引号，只要不匹配包围字符串的引号即可
     可以使用转义字符'\'
     var answer="It's alright";
@@ -72,13 +73,14 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
     var answer='He is called "Johnny"';
 3. JavaScript 数字
     JavaScript 只有一种数字类型。数字可以带小数点，也可以不带
-    极大或极小的数字可以通过科学（指数）计数法来书写
+    <font color='red'>极大或极小的数字可以通过科学（指数）计数法来书写</font>
     var y=123e5;      // 12300000
     var z=123e-5;     // 0.00123
 4. JavaScript 布尔
     布尔（逻辑）只能有两个值：true 或 false
 5. JavaScript 数组
     下面的代码创建名为 cars 的数组：
+    ```
     一种：
     var cars=new Array();
     cars[0]="Saab";
@@ -88,8 +90,10 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
     var cars=new Array("Saab","Volvo","BMW");
     三种：
     var cars=["Saab","Volvo","BMW"];
+    ```
 6. JavaScript 对象
     对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：
+    ```
     var person = {
         firstName:"Jhon",
         lastName:"Doe",
@@ -97,15 +101,18 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
     对象属性有两种寻址方式：
     name=person.lastName;
     name=person["lastName"];
+    ```
 7. Undefined 和 Null
     Undefined 这个值表示变量不含有值。
-    可以通过将变量的值设置为 null 来清空变量。
+    <font color='red'>可以通过将变量的值设置为 null 来清空变量。</font>
 8. 声明变量类型
+    ```
     var carname=new String;
     var x=      new Number;
     var y=      new Boolean;
     var cars=   new Array;
     var person= new Object;
+    ```
 
 #### JavaScript 对象
     在 JavaScript中，几乎所有的事物都是对象
@@ -150,9 +157,11 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
 4. 全局 JavaScript 变量
     在函数外声明的变量是全局变量，网页上的所有脚本和函数都能访问它。
 5. JavaScript 变量的生存期
+    <font color='red'>
     JavaScript 变量的生命期从它们被声明的时间开始。
     局部变量会在函数运行以后被删除。
     全局变量会在页面关闭后被删除。
+    </font>
 6. <font color="red">向未声明的 JavaScript 变量分配值</font>
     如果您把值赋给尚未声明的变量，该变量将被自动作为全局变量声明。
     carname="Volvo";
@@ -166,7 +175,7 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
 2. JavaScript 全局变量
     变量在函数外定义，即为全局变量。
     全局变量有 全局作用域: 网页中所有脚本和函数均可使用。 
-    如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量（方法先被调用）。
+    <font color='red'>如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量（前提是此方法被调用）。</font>
     实例中 carName 在函数内，但是为全局变量。
 
 3. JavaScript 变量生命周期
