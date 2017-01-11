@@ -1,6 +1,4 @@
-{% for post in site.posts %}
-[{{ post.title }}]:{{ post.url }}
-{% endfor %}
+
 
 [js语句+注释+变量+数据类型+对象+函数+作用域](http://www.runoob.com/js/js-statements.html)
 
@@ -62,7 +60,7 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
     <font color="red">如果重新声明 JavaScript 变量，该变量的值不会丢失.</font>
 7. JavaScript 算数
 
-#### JavaScript 数据类型
+#### JavaScript 数据类型 [參考](http://www.cnblogs.com/dailc/p/5971244.html)
 
 <font color='red'>字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。</font>
 
@@ -72,6 +70,8 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
     <font color='red'>字符串可以是引号中的任意文本。您可以使用单引号或双引号</font>
     您可以在字符串中使用引号，只要不匹配包围字符串的引号即可
     可以使用转义字符'\'
+    可以使用length来计算字符串的长度
+    字符串可以是对象,可以使用 new 关键字将字符串定义为一个对象： var firstName = new String("John"),不建议使用
     var answer="It's alright";
     var answer="He is called 'Johnny'";
     var answer='He is called "Johnny"';
