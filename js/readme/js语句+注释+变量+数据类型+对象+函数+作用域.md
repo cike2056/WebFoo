@@ -1,3 +1,7 @@
+{% for post in site.posts %}
+[{{ post.title }}]:{{ post.url }}
+{% endfor %}
+
 [js语句+注释+变量+数据类型+对象+函数+作用域](http://www.runoob.com/js/js-statements.html)
 
 #### JavaScript 语句
