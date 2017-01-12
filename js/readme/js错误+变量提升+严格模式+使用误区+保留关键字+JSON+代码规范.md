@@ -1,4 +1,4 @@
-[js错误+变量提升+严格模式+使用误区+保留关键字+JSON](http://www.runoob.com/js/js-errors.html)
+[js错误+变量提升+严格模式+使用误区+保留关键字+JSON+代码规范](http://www.runoob.com/js/js-errors.html)
 
 #### JavaScript 错误 - throw、try 和 catch 
 - try 语句测试代码块的错误。
@@ -250,3 +250,37 @@
     而javascript:void(0), 仅仅表示一个死链接。
     在页面很长的时候会使用 # 来定位页面的具体位置，格式为：# + id。
     如果你要定义一个死链接请使用 javascript:void(0) 。
+
+#### JavaScript 代码规范
+-   变量名 
+    变量名推荐使用驼峰法来命名(camelCase):
+-   空格与运算符
+    通常运算符 ( = + - * / ) 前后需要添加空格:
+-   代码缩进
+    通常使用 4 个空格符号来缩进代码块：
+-   语句规则
+    1. 简单语句的通用规则:一条语句通常以符号作为结束符。
+    2. 复杂语句的通用规则: 
+        -   将左花括号放在第一行的结尾。
+        -   左花括号前添加一空格。
+        -   将右花括号独立放在一行。
+        -   不要以分号结束一个复杂的声明。
+-   对象规则    
+    1. 将左花括号与类名放在同一行。
+    2. 冒号与属性值间有个空格。
+    3. 字符串使用双引号，数字不需要。
+    4. 最后一个属性-值对后面不要添加逗号。
+    5. 将右花括号独立放在一行，并以符号作为结束符号。
+-   命名规则
+    1. 变量和函数为驼峰法（ camelCase）
+    2. 全局变量为大写 (UPPERCASE )
+    3. 常量 (如 PI) 为大写 (UPPERCASE ) 
+    4. 变量命名你是否使用这几种规则： hyp-hens, camelCase, 或 under_scores ?
+    HTML 和 CSS 的横杠(-)字符:
+    HTML5 属性可以以 data- (如：data-quantity, data-price) 作为前缀。
+    CSS 使用 - 来连接属性名 (font-size)。
+-   HTML 载入外部 JavaScript 文件
+    使用简洁的格式载入 JavaScript 文件 ( type 属性不是必须的):
+    ```
+        <script src="myscript.js">
+    ```
