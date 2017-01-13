@@ -3,14 +3,24 @@
 
 <head>
     <meta charset="utf-8">
-    <title>菜鸟学院</title>
+    <title>菜鸟教程(runoob.com)</title>
 </head>
 
 <body>
-    <button type="button" onclick="myFunction()">click </button>
-<input id='demo' width='100' height='40' type="text">
-<p id="pdemo"></p>
-<a href="javascript:void(alert('xx!'))">link</a>
+
+    <p>局部变量计数。</p>
+    <button type="button" onclick="myFunction()">计数!</button>
+<p id="demo">0</p>
+<script>
+    var add = (function () {
+        var counter = 0;
+        return function(){return counter+=1}
+    })();
+    function myFunction() {
+        document.getElementById("demo").innerHTML = add();
+    }
+</script>
+
 </body>
 
 </html>
