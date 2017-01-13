@@ -99,7 +99,7 @@
     }
 ```
 
-2. JavaScript 闭包
+2. JavaScript <font color='red'>闭包</font>
 ```
     <script>
         var add = (function () {
