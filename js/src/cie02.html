@@ -8,17 +8,19 @@
 
 <body>
 
-    <p>局部变量计数。</p>
-    <button type="button" onclick="myFunction()">计数!</button>
-<p id="demo">0</p>
+    <button id='myBtn' onmousedown="display()" >点我</button>
+    <p id="demo2">xxxxxx</p>
 <script>
-    var add = (function () {
-        var counter = 0;
-        return function(){return counter+=1}
-    })();
-    function myFunction() {
-        document.getElementById("demo").innerHTML = add();
+    var element = document.getElementById('myBtn')
+    element.addEventListener("click",displayDate)
+    function displayDate(){
+        document.getElementById('demo2').innerHTML = Date()
     }
+
+    function display(){
+         document.getElementById('demo2').innerHTML = 'xxxxxxxxxxx'
+    }
+    
 </script>
 
 </body>

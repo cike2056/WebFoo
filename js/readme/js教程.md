@@ -5,6 +5,8 @@
     JavaScript 是可插入 HTML 页面的编程代码。
     JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。
 
+<font color='red'>一个完整的 JavaScript 实现是由以下 3 个不同部分组成的：核心（ECMAScript） 文档对象模型（DOM） 浏览器对象模型（BOM）</font>
+
 #### JavaScript 输出
     使用 window.alert() 弹出警告框。
     使用 document.write() 方法将内容写到 HTML 文档中。如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖。
