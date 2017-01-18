@@ -9,6 +9,7 @@
 <body>
 
     <button id='myBtn' onmousedown="display()" >点我</button>
+    <button onclick="display2()">再次点我</button>
     <p id="demo2">xxxxxx</p>
 <script>
     var element = document.getElementById('myBtn')
@@ -17,8 +18,21 @@
         document.getElementById('demo2').innerHTML = Date()
     }
 
+    function person(firstName,lastName){
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+
     function display(){
-         document.getElementById('demo2').innerHTML = 'xxxxxxxxxxx'
+        pr = new person('zhang','nian')
+        pr.age = 3
+        alert(pr.firstName+pr.lastName+pr.age);
+    }
+
+    function display2(){
+        // alert(pr.firstName+pr.lastName+pr.age);
+        var num = 5
+        alert('num'.toString())
     }
     
 </script>

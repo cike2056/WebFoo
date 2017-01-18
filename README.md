@@ -6,4 +6,5 @@ web前端的demo 0基础开始
  - [js错误+变量提升+严格模式+使用误区+保留关键字+JSON.md](./js/readme/js错误+变量提升+严格模式+使用误区+保留关键字+JSON+代码规范.md)
  - [js函数](./js/readme/js函数.md)
  - [js高级教程](./js/readme/js高级教程.md)
- - [html dom简介+事件](./js/readme/htmldom简介+事件.md)
+ - [jsHTMLDOM](./js/readme/jsHTMLDOM.md)
+ - [JS 浏览器BOM](./js/readme/js浏览器BOM.md)

@@ -1,4 +1,4 @@
-[htmldom简介+事件](http://www.runoob.com/js/js-htmldom.html)
+[jsHTMLDOM](http://www.runoob.com/js/js-htmldom.html)
 
 #### JavaScript HTML DOM
     通过 HTML DOM，可访问 JavaScript HTML 文档的所有元素。
@@ -132,7 +132,31 @@ addEventListener() 方法可以更简单的控制事件（冒泡与捕获）。
     element.removeEventListener("mousemove", myFunction);
 ```
 
+#### DOM元素
+1. 创建新的 HTML 元素
+```
+    <script>
+        var para=document.createElement("p");
+        var node=document.createTextNode("这是一个新段落。");
+        para.appendChild(node);
+        var element=document.getElementById("div1");
+        element.appendChild(para);
+    </script>
+```
+2. 删除已有的 HTML 元素
+```
+    <script>
+        var parent=document.getElementById("div1");
+        var child=document.getElementById("p1");
+        parent.removeChild(child);
+    </script>
+```
 
+```
+    找到您希望删除的子元素，然后使用其 parentNode 属性来找到父元素：
+    var child=document.getElementById("p1");
+    child.parentNode.removeChild(child);
+```
 
 
 
