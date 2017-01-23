@@ -5,7 +5,7 @@
     "files.autoSave": "afterDelay",
     "terminal.integrated.fontSize": 18,
     "editor.suggestFontSize": 18,
-    "window.zoomLevel": 1.6,
+    "window.zoomLevel": 1,
     "editor.fontFamily": "monospace,'Droid Sans Mono', 'Courier New', 'Droid Sans Fallback'",
     "editor.cursorStyle": "underline",
     "editor.fontWeight": "normal",
