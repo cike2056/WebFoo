@@ -8,9 +8,12 @@ web前端的demo 0基础开始
  - [js高级教程](./js/readme/js高级教程.md)
  - [jsHTMLDOM](./js/readme/jsHTMLDOM.md)
  - [JS 浏览器BOM](./js/readme/js浏览器BOM.md)
+ - [js注意点](./js/readme/js注意点.md)
 
  ### CSS
 
- 
 
- ### 推荐博客
+
+ ### 参考
+ 
+   - [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)

@@ -36,6 +36,20 @@
 
 #### JavaScript 运算符(略)
 
+#### 逗号运算符
+```
+    for (var i = 0, j = 9; i <= 9; i++, j--)
+     document.writeln("a[" + i + "][" + j + "] = " + a[i][j]);
+```
+
+```
+    另一个使用逗号操作符的例子是在返回值前处理一些操作。如同下面的代码，只有最后一个表达式被返回，其他的都只是被求值。
+    function myFunc () {
+        var x = 0;
+        return (x += 1, x); // the same of return ++x;
+    }
+```
+
 #### JavaScript 比较 和 逻辑运算符
     比较和逻辑运算符用于测试 true 或者 false。
 1. 比较运算符 (Number == String true)
