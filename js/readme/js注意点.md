@@ -28,6 +28,11 @@
 - String中的trim()方法在IE9以下无法使用，建议自己写一个一样功能的函数绑定到string上。(例如:String.prototype.fun1=function (){ console.log("successful")};)
 - 逗号运算符
     当你想要在期望一个表达式的位置包含多个表达式时，可以使用逗号操作符。这个操作符最常用的一种情况是：for 循环中提供多个参数。
+- array中存放不同类型
+- typeof NaN 返回 number，NaN === NaN或 NaN == NaN返回false,(NaN !==NaN)==true
+    NaN is still a numeric type, despite the fact it actually stands for Not-A-Number 
+
+
 
 ### HTML DOM
 - 从html中获取的值，基本都是字符串类型，数字也不例外

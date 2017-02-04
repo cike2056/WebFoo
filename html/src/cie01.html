@@ -8,14 +8,22 @@
         <button id="btn" onclick="myFunction()">click</button>
         <p id="demo">0</p>
         <script>
-            var a =1,b=2,c=3
-           function func1(){
-               var x =0
-               alert (x+=1,x)
-           }
+    
            function myFunction(){
-              func1()
+              alert(charsInBody())
            }
+
+           var charsInBody = (function counter(elm) {
+                if (elm.nodeType == 3) { // 文本节点
+                    return elm.nodeValue.length;
+                }
+                var count = 0;
+                for (var i = 0, child; child = elm.childNodes[i]; i++) {
+                    count += counter(child);
+                }
+                return count;
+            })(document.body);
+
         </script>
     
     </body>
