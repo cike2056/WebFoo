@@ -31,6 +31,9 @@
 - array中存放不同类型
 - typeof NaN 返回 number，NaN === NaN或 NaN == NaN返回false,(NaN !==NaN)==true
     NaN is still a numeric type, despite the fact it actually stands for Not-A-Number 
+- && 和 || 运算符
+    检测对象是否为空 var name = o && o.getName()
+    用来设置默认值 var name = otherName || 'default'
 
 
 

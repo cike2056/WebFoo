@@ -8,22 +8,23 @@
         <button id="btn" onclick="myFunction()">click</button>
         <p id="demo">0</p>
         <script>
-    
+            var MyAPP = MyAPP || {}
+            MyAPP.commonMethod = {
+                regExForName: "regExForName", // 定义名字的正则验证
+                regExForPhone: "regExForPhone", // 定义电话的正则验证
+                validateName: function(name){
+                    // 对名字name做些操作，你可以通过使用“this.regExForname”
+                    // 访问regExForName变量
+                },
+                
+                validatePhoneNo: function(phoneNo){
+                    // 对电话号码做操作
+                }
+            }
            function myFunction(){
-              alert(charsInBody())
+               console.log(MyAPP.commonMethod.regExForName)
+               alert(MyAPP.commonMethod.regExForName)
            }
-
-           var charsInBody = (function counter(elm) {
-                if (elm.nodeType == 3) { // 文本节点
-                    return elm.nodeValue.length;
-                }
-                var count = 0;
-                for (var i = 0, child; child = elm.childNodes[i]; i++) {
-                    count += counter(child);
-                }
-                return count;
-            })(document.body);
-
         </script>
     
     </body>
