@@ -34,6 +34,67 @@
 - && 和 || 运算符
     检测对象是否为空 var name = o && o.getName()
     用来设置默认值 var name = otherName || 'default'
+- 试图访问一个未声明的变量或者访问一个使用 let 声明的但未初始化的变量会导致一个 ReferenceError 异常被抛出
+- undefined 值在布尔类型环境中会被当作 false,数值类型环境中 undefined 值会被转换为 NaN.当你对一个 null 变量求值时，空值 null 在数值类型环境中会被当作0来对待，而布尔类型环境中会被当作 false。
+- 在 ECMAScript 2015 中，let（const）将不会提升变量到代码块的顶部。
+- 可以通过指定 window 或 frame 的名字，从一个 window 或 frame 访问另一个 window 或 frame 中声明的变量。例如，在文档里声明一个叫 phoneNumber 的变量，那么你就可以在子框架里使用 parent.phoneNumber 来引用它。
+- 常量不可以通过赋值改变其值，也不可以在脚本运行时重新声明。它必须被初始化为某个值。在同一作用域中，不能使用与变量名或函数名相同的名字来命名常量。
+    <font color='red'>对象属性</font>是不受保护的,所以可以使用如下语句来执行。
+```
+    const MY_OBJECT = {"key": "value"};
+    MY_OBJECT.key = "otherValue";
+```
+- 字面量是由语法表达式定义的<font color='red'>常量</font>；或，通过由一定字词组成的语词表达式定义的常量
+- 若你在同一行中连写两个逗号（,），数组中就会产生一个没有被指定的元素，其初始值是undefined。如果你在元素列表的尾部添加了一个逗号，它将会被忽略。显式地将缺失的元素声明为undefined，将大大提高你的代码的清晰度和可维护性。
+- 可以使用数字或字符串字面值作为属性的名字，或者在另一个字面值内嵌套上一个字面值。
+    对象属性名字可以是任意字符串，包括空串。如果对象属性名字不是合法的javascript标识符，它必须用""包裹。属性的名字不合法，那么便不能用.访问属性值，而是通过类数组标记("[]")访问和赋值。
+```
+    var car = { manyCars: {a: "Saab", "b": "Jeep"}, 7: "Mazda" };
+    console.log(car.manyCars.b); // Jeep
+    console.log(car[7]); // Mazda
+    console.log(car['7']);//Mazda
+```
+- 原始的布尔值true和false 与 布尔对象的值true和false.下例中b属于对象，会被计算为true
+```
+    var b = new Boolean(false);
+    if (b) // this condition evaluates to true
+    if (b == true) // this condition evaluates to false
+```
+- break 和 break label 
+    第一种语法形式用于终止在循环体或者switch的封闭内部；第二种语法形式用于在特定的封闭标签语句
+```
+    //示例 1
+    for (i = 0; i < a.length; i++) {
+    if (a[i] == theValue)
+        break;
+    }
+```
+```
+    //示例 2
+    var x = 0;
+    var z = 0
+    labelCancelLoops: while (true) {
+        console.log("Outer loops: " + x);
+        x += 1;
+        z = 1;
+        while (true) {
+            console.log("Inner loops: " + z);
+            z += 1;
+            if (z === 10 && x === 10) {
+                break labelCancelLoops;
+            } else if (z === 10) {
+                break;
+            }
+        }
+    }
+```
+- continue 和 continue label
+- for each...in 语句 让对象属性的值递归取得，而不是作用于它们的名字。
+- 抛出异常可以抛出任意表达式而不是特定一种类型的表达式。
+- addEventListener方法 btn.addEventListener("click", arg); 当参数是func 点击时运行，当参数时func() onload时运行
+
+
+
 
 
 

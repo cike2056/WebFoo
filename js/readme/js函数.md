@@ -20,7 +20,26 @@
     callAnotherFunc(doAdd, 10); //输出 "20"  
 ```
 
-3. 函数提升（Hoisting）
+3. <font color='red'>函数提升（Hoisting）</font><br>
+    只有函数声明会被提升到顶部，而不包括函数表达式。
+```
+    /* 函数声明 */
+    foo(); // "bar"
+
+    function foo() {
+    console.log("bar");
+    }
+
+
+    /* 函数表达式   表达式定义的函数，称为匿名函数。匿名函数没有函数提升。*/
+
+    baz(); // TypeError: baz is not a function
+    //此时的"baz"相当于一个声明的变量，类型为undefined。
+    由于baz只是相当于一个变量，因此浏览器认为"baz()"不是一个函数。
+    var baz = function() {
+    console.log("bar2");
+    };
+```
 
 4. 自调用函数  
     自调用表达式会自动调用。

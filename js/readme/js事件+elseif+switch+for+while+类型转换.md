@@ -154,8 +154,9 @@ switch语句:
 #### JavaScript Break 和 Continue 语句
     break 语句用于跳出循环。
     continue 用于跳过循环中的一个迭代。
-JavaScript 标签
+JavaScript 标签(语句块或者循环语句中)
     需标记 JavaScript 语句，请在语句之前加上冒号：
+    label :
     break labelname; 
     continue labelname;
 ```
