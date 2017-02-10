@@ -54,3 +54,10 @@ var charsInBody = (function counter(elm) {
     s.reversed(); // nomiS
 ```
 
+```
+    function inside (a){
+         return function(b){return a+b}
+    }
+    var c = inside(5)(3)
+```
+

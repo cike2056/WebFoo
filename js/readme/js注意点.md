@@ -92,8 +92,22 @@
 - for each...in 语句 让对象属性的值递归取得，而不是作用于它们的名字。
 - 抛出异常可以抛出任意表达式而不是特定一种类型的表达式。
 - addEventListener方法 btn.addEventListener("click", arg); 当参数是func 点击时运行，当参数时func() onload时运行
-
-
+- 从ECMAScript 6 开始，JavaScript 增加了对 Promise 对象的支持，它允许你对延时和异步操作流进行控制。
+- for...in 循环遍历的结果是数组元素的下标不同的是， for...of 遍历的结果是元素的值
+- 传值 原始参数（比如一个具体的数字）被作为值传递给函数；值被传递给函数，如果被调用函数改变了这个参数的值，这样的改变不会影响到全局或调用函数。
+    如果你传递一个对象（即一个非原始值(non-primitive value)，例如Array或用户自定义的对象）作为参数，而函数改变了这个对象的属性，这样的改变对函数外部是可见的
+```
+    var a = 0
+    var b = 1
+    function func(a){
+        a = 3
+        b = 3
+    }
+    func(a)
+    console.log(a) // a = 0
+    console.log(b) // b = 3
+```
+- 
 
 
 
