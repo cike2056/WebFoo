@@ -107,7 +107,29 @@
     console.log(a) // a = 0
     console.log(b) // b = 3
 ```
-- 
+- 函数可以作为参数传递给另外一个函数
+```
+    function map(f,a) {
+    var result = [], // 创建一个新的数组
+        i;
+
+    for (i = 0; i != a.length; i++)
+        result[i] = f(a[i]);
+    return result;
+    }
+```
+- 设置函数参数的默认值 function func(a,b=1)
+- 箭头函数表达式（也称胖箭头函数, fat arrow function）相比函数表达式具有较短的语法并以词法的方式绑定 this。箭头函数总是匿名的。有两个因素会影响引入箭头函数：更简洁的函数和 this。
+箭头函数内部的this是词法作用域，由上下文确定,也就是外层调用者obj。
+-  解构赋值语法是一个能从数组或对象对应的数组结构或对象字面量里提取数据的 Javascript 表达式。[结构赋值](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- +一元运算符, 如果操作数在之前不是number，试图将其转换为number console.log(+'3')
+- delete操作符, 删除一个对象(an object)或一个对象的属性(an object's property)或者一个数组中某一个键值.不推荐使用.能使用 delete 删除各种各样的隐式声明(implicity declared)， 但是被var声明的除外 .
+如果 delete 操作成功, 属性或者元素会变成 undefined. 如果 delete可行会返回true，如果不成功返回false.
+- 关系操作符in   in operator, 如果指定的属性(property)在指定的对象(object)中会返回true,语法如下:propNameOrNumber in objectName
+- instanceof   instanceof operator, 如果对象是某种指定类型(object type)返回true.
+- 十进制可以以0开头，后面接其他十进制数字，但是假如后面接的十进制数字小于8，那么该数字将会被当做八进制处理。
+- 二进制数字语法是以零为开头，后面接一个小写或大写的拉丁文字母B(0b或者是0B)。
+- 十六进制数字语法是以零为开头，后面接一个小写或大写的拉丁文字母X(0x或者是0X)。
 
 
 

@@ -5,16 +5,20 @@
         <title>runoob</title>
     </head>
     <body >
-        <form name="selectForm">
 
 
       <script>
-        
-       function inside (a){
-         return function(b){return a+b}
-       }
-       var c = inside(5)(3)
-       alert(c)
+        var day = new Date()
+        var endDay = new Date(2017,11,31,23,59,59,999)
+        endDay.setFullYear(day.getFullYear())
+        var msPerDay = 24 * 60 * 60 * 1000
+        var dayLeft = (endDay.getTime() - day.getTime())/msPerDay
+        dayLeft = Math.round(dayLeft)
+       
+       alert(dayLeft)
+
+       var a =2 
+       
         
       </script>
 
