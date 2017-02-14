@@ -125,3 +125,9 @@ var charsInBody = (function counter(elm) {
   </script>    
 ```
 
+```
+    console.log(`Fifteen is ${a + b} and\nnot ${2 * a + b}.`);
+    value as
+    console.log("Fifteen is " + (a + b) + " and\nnot " + (2 * a + b) + ".");
+```
+
