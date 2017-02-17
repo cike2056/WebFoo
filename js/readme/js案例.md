@@ -131,3 +131,55 @@ var charsInBody = (function counter(elm) {
     console.log("Fifteen is " + (a + b) + " and\nnot " + (2 * a + b) + ".");
 ```
 
+```
+    var arr = [42];      // 创建一个只有唯一元素的数组:
+                     // the number 42.
+    var arr = Array(42); // 创建一个没有元素的数组, 
+                        // 但是数组的长度被设置成42.
+```
+
+```
+    //这样避免了检测数组长度的开销，额外的好处是确保了div变量当前在每次循环中都被重新赋值为当前项。
+    var divs = document.getElementsByTagName('div');
+    for (var i = 0, div; div = divs[i]; i++) {
+    /* Process div in some way */
+    }
+```
+
+```
+    var colors = ['red', 'green', 'blue'];
+     colors.forEach(function(color) {
+          alert(color);
+        });   
+```
+
+```
+    //concat() 连接两个数组并返回一个新的数组。
+    var myArray = new Array("1", "2", "3");
+    myArray = myArray.concat("a", "b", "c"); 
+```
+
+```
+    var a1 = ['a', 'b', 'c'];
+    var a2 = a1.map(function(item) { return item.toUpperCase(); });
+    console.log(a2); // logs A,B,C
+```
+
+```
+    function isNumber(value){
+        return typeof value == 'number';
+    }
+    var a1 = [1, 2, 3];
+    console.log(a1.every(isNumber)); // logs true
+    var a2 = [1, '2', 3];
+    console.log(a2.every(isNumber)); // logs false
+```
+
+```
+    var maps = new Map()
+    maps.set('dog','woof')
+    maps.set('cat','meow')
+    for(var [key,value] of maps){
+          alert(key + ' of ' + value)
+    }            
+```

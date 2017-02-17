@@ -83,7 +83,7 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
 4. JavaScript 布尔
     布尔（逻辑）只能有两个值：true 或 false
 5. JavaScript 数组
-    下面的代码创建名为 cars 的数组：
+- 下面的代码创建名为 cars 的数组：
     ```
     一种：
     var cars=new Array();
@@ -95,6 +95,53 @@ JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高
     三种：
     var cars=["Saab","Volvo","BMW"];
     ```
+
+- 数组的方法：
+    ```
+    concat() 连接两个数组并返回一个新的数组。
+    join(deliminator = ',') 将数组的所有元素连接成一个字符串。
+    push() 在数组末尾添加一个或多个元素，并返回数组操作后的长度。
+    pop() 从数组移出最后一个元素，并返回该元素。
+    shift() 从数组移出第一个元素，并返回该元素。
+    unshift() 在数组开头添加一个或多个元素，并返回数组的新长度。
+    slice(start_index, upto_index) 从数组提取一个片段，并作为一个新数组返回。
+    splice(index, count_to_remove, addElement1, addElement2, ...)从数组移出一些元素，（可选）并替换它们。 
+    reverse() 颠倒数组元素的顺序：第一个变成最后一个，最后一个变成第一个。
+    sort() 给数组元素排序。
+    indexOf(searchElement[, fromIndex]) 在数组中搜索searchElement 并返回第一个匹配的索引。
+    lastIndexOf(searchElement[, fromIndex]) 和 indexOf差不多，但是是从结尾开始，并且是反向搜索。
+    forEach(callback[, thisObject]) 在数组每个元素项上执行callback。
+    forEach(callback[, thisObject]) 在数组每个元素项上执行callback。
+    map(callback[, thisObject]) 在数组的每个单元项上执行callback函数，并把返回包含回调函数返回值的新数组。》译者注：也就是遍历数组，并通过callback对数组元素进行操作，并将所有操作结果放入数组中并返回该数组。
+    filter(callback[, thisObject]) 返回一个包含所有在回调函数上返回为true的元素的新数组。》译者注：callback在这里担任的是过滤器的角色，当元素符合条件，过滤器就返回true，而filter则会返回所有符合过滤条件的元素。
+    every(callback[, thisObject]) 当数组中每一个元素在callback上被返回true时就返回true。》译者注：同上，every其实类似filter，只不过它的功能是判断是不是数组中的所有元素都符合条件，并且返回的是bool值。
+    some(callback[, thisObject]) 只要数组中有一项在callback上被返回true，就返回true。》译者注：同上，类似every，不过前者要求都符合筛选条件才返回true，后者只要有符合条件的就返回true。
+    reduce(callback[, initialValue]) 使用回调函数 callback(firstValue, secondValue) 把数组列表计算成一个单一值（译者注：他数组元素两两递归处理的方式把数组计算成一个值）
+    reduceRight(callback[, initalvalue]) 和 reduce()相似，但是是从最后一个元素开始的。
+    ```
+
+- 数组推导式
+    ```
+    var numbers = [1, 2, 3, 4];
+    var doubled = [i * 2 for (i of numbers)];
+    console.log(doubled); // logs 2,4,6,8
+    //等价于
+    var doubled = numbers.map(function(i){return i * 2;});
+    ```
+    ```
+    var numbers = [1, 2, 3, 21, 22, 30];
+    var evens = [i for (i of numbers) if (i % 2 === 0)];
+    console.log(evens); // logs 2,22,30
+    //等价于
+    var evens = numbers.filter(function(i){return i % 2 === 0;});
+    ```
+    ```
+    //map() 和filter() 类型的操作可以被组合（等效）为单个数组推导式。这里就有一个过滤出偶数，创建一个它的倍数数组的例子：
+    var numbers = [1, 2, 3, 21, 22, 30];
+    var doubledEvens = [i * 2 for (i of numbers) if (i % 2 === 0)];
+    console.log(doubledEvens); // logs 4,44,60
+    ```
+
 6. JavaScript 对象
     对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：
     ```
