@@ -183,3 +183,134 @@ var charsInBody = (function counter(elm) {
           alert(key + ' of ' + value)
     }            
 ```
+
+```
+    var myObj = {
+    myMethod: function(params) {
+        // ...do something
+    }
+    
+    // 或者 这样写也可以
+    
+    myOtherMethod(params) {
+        // ...do something else
+    }
+    };
+```
+
+```
+    var d = Date.prototype
+    Object.defineProperty(d,'year',{
+          get:function(){
+            return this.getFullYear()
+          },
+          set:function(y){
+            this.setFullYear(y)
+          }
+        })    
+```
+
+```
+    var d = Date.prototype
+        Object.defineProperties(d,{
+          'year':{
+            get :function(){
+              return this.getFullYear()
+            },
+            set :function(y){
+              this.setFullYear(y)
+            }
+          },
+          'mills':{
+            get:function(){
+              return this.getTime()
+            },
+            set:function(t){
+              this.setTime(t)
+            }
+          }
+        })
+```
+
+```
+    //指定父类
+    function Manager () {
+        this.reports = [];
+    }
+    Manager.prototype = new Employee;
+
+    function WorkerBee () {
+        this.projects = [];
+    }
+    WorkerBee.prototype = new Employee;
+```
+
+```
+    function Employee (name){
+        this.name = name||''
+        this.dept = 'general'
+    }    
+    function Manager(reports){
+        this.base = Employee
+        // this.base(name) //修改属性
+        this.reports = reports||[]
+    }         
+    Manager.prototype = new Employee("jjjjj")
+    alert(new Manager([1,3]).name)    
+```
+
+```
+    //用闭包模拟私有方法
+    var Counter = (function() {
+    var privateCounter = 0;
+    function changeBy(val) {
+        privateCounter += val;
+    }
+    return {
+        increment: function() {
+        changeBy(1);
+        },
+        decrement: function() {
+        changeBy(-1);
+        },
+        value: function() {
+        return privateCounter;
+        }
+    }   
+    })();
+```
+
+```
+    "use strict";
+
+    class Polygon {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    }
+
+    class Square extends Polygon {
+    constructor(sideLength) {
+        super(sideLength, sideLength);
+    }
+    get area() {
+        return this.height * this.width;
+    }
+    set sideLength(newLength) {
+        this.height = newLength;
+        this.width = newLength;
+    }
+    }
+
+    var square = new Square(2);
+```
+
+```
+    var o = new Foo();
+    JavaScript 实际上执行的是：
+    var o = new Object();
+    o.[[Prototype]] = Foo.prototype;
+    Foo.call(o);
+```
+

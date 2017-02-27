@@ -5,40 +5,15 @@
         <title>runoob</title>
     </head>
     <body >
-
+      <p id="show" >0</p>
+      <button id="minus" onclick="clickMinus()"> - <button>
+      <button id="add" onclick="clickAdd()"> + </button>
       <script>
-        function showProps(obj,objName){
-          var result = ''
-          for(var i in obj){
-            if (obj.hasOwnProperty(i)) {
-                result += objName + "." + i + " = " + obj[i] + "\n";
-            }
-          }
-          return result
-        }
-
-        function keys(obj,objName){
-          var pros = Object.keys(obj)
-          for(var i in pros){
-            result += objName + "." + i + " = " + pros[i] + "\n";
-          }
-          return result
-        }
-
-        var person = {
-          'first':'first',
-          second :'second',
-          get myName(){
-            return this.first
-          },
-          set myName(value){
-            this.first = value
-          }
-        }
-
-        person.prototype.color = 'red'
-        person.color = 'red'
-        alert(person.prototype.color)
+        
+        
+        
+       
+      
       </script>
 
     </body>

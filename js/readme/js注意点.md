@@ -159,7 +159,48 @@
     该方法返回一个对象 o 自身包含（不包括原型中）的所有属性的名称的数组。
     - Object.getOwnPropertyNames(o)
     该方法返回一个数组，它包含了对象 o 所有拥有的属性（无论是否可枚举）的名称。
-
+- Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个已经存在的属性， 并返回这个对象。Object.defineProperty(obj, prop, descriptor)
+- Dog.prototype.species = '犬科' 等价于 Dog.prototype = {species:'犬科'}
+- 定义自定义迭代器
+    - 遍历一个序列对象时应该是一个接着一个。
+    - 遍历一棵树时应该使用深度优先或者广度优先方式。
+    - 遍历一个数据库查询结果对象时应该是一条一条地遍历，即使整个结果并没有被加载到一个数组中。
+    - 一个迭代器在一个无限的数学序列(如斐波那契序列)应该能够一个一个地返回结果而不创建一个无限长度的数据结构。
+- 两等号判等会在比较时进行类型转换；三等号判等不会进行类型转换（如果类型不同会直接返回 false ）； Object.is 在三等号判等的基础上特别处理了 NaN 、 -0 和 +0 ，保证 -0 和 +0 不再相同，但 Object.is(NaN, NaN) 会返回 true。[理解相等比较的模型](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- 全等操作符比较两个值是否相等，两个被比较的值在比较前都不进行隐式转换。如果两个被比较的值具有不同的类型，这两个值是不全等的。否则，如果两个被比较的值类型相同，值也相同，并且都不是 number 类型时，两个值全等。最后，如果两个值都是 number 类型，当两个都不是 NaN，并且数值相同，或是两个值分别为 +0 和 -0 时，两个值被认为是全等的。
+    第一个情况是，浮点数 0 是不分正负的。区分 +0 和 -0 在解决一些特定的数学问题时是必要的，但是大部分境况下我们并不用关心。全等操作符认为这两个值是全等的。第二个情况是，浮点数包含了 NaN 值，用来表示某些定义不明确的数学问题的解，例如：正无穷加负无穷。全等操作符认为 NaN 与其他任何值都不全等，包括它自己。（等式 (x !== x) 成立的唯一情况是 x 的值为 NaN）
+- 相等操作符比较两个值是否相等，在比较前将两个被比较的值转换为相同类型。在转换后（等式的一边或两边都可能被转换），最终的比较方式等同于全等操作符 === 的比较方式。 相等操作符满足交换律。
+- Object.is() 
+    ```
+        Object.is() determines whether two values are the same value. Two values are the same if one of the following holds:
+            both undefined
+            both null
+            both true or both false
+            both strings of the same length with the same characters
+            both the same object
+            both numbers and
+            both +0
+            both -0
+            both NaN
+            or both non-zero and both not NaN and both have the same value
+    ```    
+- 通过 Number.isSafeInteger() 方法还有 Number.MAX_SAFE_INTEGER 和 Number.MIN_SAFE_INTEGER 来检查值是否在双精度浮点数的取值范围内。 超出这个范围，JavaScript 中的数字不再安全.
+- 闭包由两部分构成：函数，以及创建该函数的环境。环境由闭包创建时在作用域中的任何局部变量组成。
+- 在没有必要的情况下，在其它函数中创建函数是不明智的，因为闭包对脚本性能具有负面影响，包括处理速度和内存消耗。
+- JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。
+- JavaScript 并没有其他基于类的语言所定义的“方法”。在 JavaScript 里，任何函数都可以添加到对象上作为对象的属性。
+- 当继承的函数被调用时，this 指向的是当前继承的对象，而不是继承的函数所在的原型对象.
+- ECMAScript6 引入了一套新的关键字用来实现 class。JavaScript 仍然是基于原型的。这些新的关键字包括 class, constructor, static, extends, 和 super.
+- 检测对象的属性是定义在自身上还是在原型链上，有必要使用 hasOwnProperty 方法，所有继承自 Object.proptotype 的对象都包含这个方法。
+    hasOwnProperty 是 JavaScript 中唯一一个只涉及对象自身属性而不会遍历原型链的方法。
+- 每一个消息执行完成后，其它消息才会被执行。当你分析你的程序时，这点提供了一些优秀的特性，包括当一个函数运行时，它不能被取代且会在其它代码运行前先完成（而且能够修改这个函数控制的数据）。
+    这点与C语言不同。例如，C语言中当一个程序在一个线程中运行时，它可以在任何点停止且可以在其它线程中运行其它代码。这个模型的一个缺点在于当一个消息的完成耗时过长，网络应用无法处理用户的交互如点击或者滚动。
+    浏览器用“程序需要过长时间运行”的对话框来缓解这个问题。一个比较好的解决方案是使消息处理变短且如果可能的话，将一个消息拆分成几个消息。
+- 调用 setTimeout 函数会在一个时间段过去后在队列中添加一个消息。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout 消息必须等待其它消息处理完。
+    因此第二个参数仅仅表示最少的时间 而非确切的时间。
+- 多个运行时互相通信 一个 web worker 或者一个跨域的 iframe 都有它们自己的栈，堆和消息队列。两个不同的运行时只有通过 postMessage 方法进行通信。这个方法会给另一个运行时添加一个消息如果后者监听了 message 事件。
+- 标记-清除算法 这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。
+- JavaScript类型数组是一种类似数组的对象，并提供用于访问原始二进制数据的机制。[类型数组](https://itbilu.com/javascript/js/41kiT1PbW.html)
 
 ### HTML DOM
 - 从html中获取的值，基本都是字符串类型，数字也不例外
